@@ -22,28 +22,6 @@ def calc_assignments(lists):
     adv_class = lists[0]
     lists[0] = [""] * 28
 
-    # # Make students in class have same number as they have in advisory
-    # for i, lis in enumerate(lists[1:]):
-    #     for j, name in enumerate(lis):
-    #         if name in lists[0]:
-    #             for k in range(lists[0].index(name) - j):
-    #                 lis.insert(j, "")
-    #
-    # # Make students in advisory have same number as they have in class
-    # for i, name in enumerate(lists[0]):
-    #     for j, lis in enumerate(lists[1:]):
-    #         if name != "" and name in lis:
-    #             for k in range(lis.index(name) - i):
-    #                 lists[0].insert(i, "")
-    #
-    # # Fix students that are too low in advisory
-    # for i, name in enumerate(lists[0]):
-    #     for j, lis in enumerate(lists[1:]):
-    #         if name != "" and name in lis:
-    #             if i != lis.index(name) and lists[0][lis.index(name)] == "":
-    #                 lists[0][lis.index(name)] = name
-    #                 lists[0][i] = ""
-
     # Iterate through classes row by row
     # If student is in advisory, place them in the same row as they are in class
     # If there is already an advisory student in that row, shift down the class with fewer students
