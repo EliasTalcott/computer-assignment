@@ -4,6 +4,8 @@ import openpyxl
 from openpyxl.styles import Font
 from openpyxl.styles.borders import Border, Side
 
+MAX_STUDENTS = 28
+
 ###
 ## Read class list from Excel file
 ###
@@ -33,12 +35,11 @@ def write_computer_assignments(outfile, lists, classes):
     numColsUsed = 2
     numRowsUsed = 4
     numClasses = len(classes)
-    maxClassSize = 28
 
     # Format sheet
     sheet.merge_cells(start_row = 1, start_column = 1, end_row = 1, end_column = numClasses + 1)
     sheet.cell(column = 1, row = 1, value = "Computer Assignments").font = Font(size = "18", name = "Arial", bold = True)
-    for row in range(maxClassSize + 3):
+    for row in range(MAX_STUDENTS + 3):
         sheet.row_dimensions[row + 1].height = 26.3
         if (row + 1) >= 4:
             sheet.cell(column = 1, row = row + 1, value = row - 2)
